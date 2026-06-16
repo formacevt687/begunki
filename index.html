@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure Dash</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas" width="960" height="540"></canvas>
+
+        <!-- Главное меню -->
+        <div id="main-menu" class="overlay">
+            <h1 class="game-title">Treasure Dash</h1>
+            <p class="subtitle">A pixel platformer adventure</p>
+            <div class="menu-buttons">
+                <button class="menu-btn" id="btn-start">Start Game</button>
+                <button class="menu-btn" id="btn-settings">Settings</button>
+                <button class="menu-btn" id="btn-credits">Credits</button>
+            </div>
+        </div>
+
+        <!-- Настройки -->
+        <div id="settings-screen" class="overlay hidden">
+            <h2>Settings</h2>
+            <div class="setting-row">
+                <label>Music Volume</label>
+                <input type="range" id="music-volume" min="0" max="100" value="50">
+                <span id="music-val">50</span>
+            </div>
+            <div class="setting-row">
+                <label>SFX Volume</label>
+                <input type="range" id="sfx-volume" min="0" max="100" value="70">
+                <span id="sfx-val">70</span>
+            </div>
+            <button class="menu-btn" id="btn-back-settings">Back</button>
+        </div>
+
+        <!-- Титры -->
+        <div id="credits-screen" class="overlay hidden">
+            <h2>Credits</h2>
+            <p class="credit-text">
+                <strong>Treasure Dash</strong><br>
+                A pixel platformer made with pure HTML5 Canvas & JavaScript.<br><br>
+                Design & Code — You<br>
+                Inspired by Sonic, Mario, Celeste & Super Meat Boy.<br><br>
+                Thank you for playing!
+            </p>
+            <button class="menu-btn" id="btn-back-credits">Back</button>
+        </div>
+
+        <!-- HUD -->
+        <div id="hud" class="hidden">
+            <div class="hud-item">❤️ <span id="hud-lives">3</span></div>
+            <div class="hud-item">🪙 <span id="hud-coins">0</span></div>
+            <div class="hud-item">Level <span id="hud-level">1</span></div>
+            <div class="hud-item">⏱ <span id="hud-time">0.0</span>s</div>
+        </div>
+
+        <!-- Пауза -->
+        <div id="pause-screen" class="overlay hidden">
+            <h2>Paused</h2>
+            <button class="menu-btn" id="btn-continue">Continue</button>
+            <button class="menu-btn" id="btn-restart">Restart</button>
+            <button class="menu-btn" id="btn-main-menu">Main Menu</button>
+        </div>
+
+        <!-- Game Over -->
+        <div id="gameover-screen" class="overlay hidden">
+            <h2 class="gameover-title">Game Over</h2>
+            <p>You ran out of lives.</p>
+            <button class="menu-btn" id="btn-retry">Retry Level</button>
+            <button class="menu-btn" id="btn-go-menu">Main Menu</button>
+        </div>
+
+        <!-- Уровень завершён -->
+        <div id="levelcomplete-screen" class="overlay hidden">
+            <h2 class="victory-title">Level Complete!</h2>
+            <p>Coins: <span id="lc-coins">0</span></p>
+            <p>Time: <span id="lc-time">0.0</span>s</p>
+            <button class="menu-btn" id="btn-next-level">Next Level</button>
+        </div>
+
+        <!-- Финал -->
+        <div id="final-screen" class="overlay hidden">
+            <h2 class="victory-title">🏆 Congratulations! </h2>
+            <p class="subtitle">You finished Treasure Dash!</p>
+            <div class="stats">
+                <p>Total Coins: <span id="fs-coins">0</span></p>
+                <p>Best Time: <span id="fs-time">0.0</span>s</p>
+                <p>Deaths: <span id="fs-deaths">0</span></p>
+                <p>Completion: <span id="fs-completion">100</span>%</p>
+            </div>
+            <button class="menu-btn" id="btn-final-menu">Main Menu</button>
+        </div>
+    </div>
+
+    <script src="js/constants.js"></script>
+    <script src="js/input.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/camera.js"></script>
+    <script src="js/platforms.js"></script>
+    <script src="js/collectibles.js"></script>
+    <script src="js/enemies.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/levels.js"></script>
+    <script src="js/renderer.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
